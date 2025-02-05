@@ -1,7 +1,7 @@
-import { Chat } from "@/components/chat";
 import { ChatContainer } from "@/components/chat-container";
-import { Messages } from "@/components/messages";
 import { getLastUsedModel, getModels } from "@/services/getModels";
+import { Github } from "lucide-react";
+import Link from "next/link";
 
 export default async function Home() {
 	const { models } = await getModels();
@@ -12,6 +12,13 @@ export default async function Home() {
 			<main>
 				<ChatContainer models={models} lastModel={lastModel} />
 			</main>
+			<Link
+				href="https://github.com/Jared-MB/AI-Chat"
+				target="_blank"
+				className="absolute bottom-4 right-4"
+			>
+				<Github />
+			</Link>
 		</div>
 	);
 }
