@@ -1,8 +1,7 @@
 import { usePrompt } from "@/store/prompt.store";
-import { memo } from "react";
 import { Textarea } from "./ui/textarea";
 
-export const PromptInput = memo(() => {
+export const PromptInput = () => {
 	const { setPrompt, prompt } = usePrompt();
 
 	return (
@@ -13,4 +12,4 @@ export const PromptInput = memo(() => {
 			value={prompt}
 		/>
 	);
-});
+};

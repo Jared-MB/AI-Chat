@@ -4,9 +4,8 @@ import { useMessages } from "@/store/messages.store";
 import { cn } from "@/lib/utils";
 import { Message } from "./message";
 import { useStream } from "@/store/stream.store";
-import { memo } from "react";
 
-export const Messages = memo(({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
+export const Messages = ({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
 	const messages = useMessages((store) => store.messages);
 	const { isLoading, isStreaming, streamingContent } = useStream();
 
@@ -38,4 +37,4 @@ export const Messages = memo(({ ref }: { ref: React.Ref<HTMLDivElement> }) => {
 			</div>
 		</div>
 	);
-});
+};
